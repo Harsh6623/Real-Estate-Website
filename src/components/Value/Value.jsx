@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Value.css";
 import data from "../../utils/accordion";
-
 import {
   Accordion,
   AccordionItem,
@@ -14,6 +13,8 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 
 const Value = () => {
+  const [className, setClassname] = useState(null);
+
   return (
     <section className="v-wrapper">
       <div className="paddings innerWidth flexCenter v-container">
@@ -39,7 +40,6 @@ const Value = () => {
             preExpanded={[0]}
           >
             {data.map((item, i) => {
-              const [className, setClassname] = useState(null);
               return (
                 <AccordionItem
                   uuid={i}
